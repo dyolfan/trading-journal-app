@@ -1,17 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Router } from "electron-router-dom";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import s from "./App.module.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Trading Journal
-        </p>
-      </header>
-    </div>
-  );
+	return (
+		<div className={s.body}>
+			<Router
+				main={
+					<>
+						<Route path='/' element={<Home />} />
+						<Route path='/register' element={<Register />} />
+					</>
+				}
+			/>
+		</div>
+	);
 }
 
 export default App;

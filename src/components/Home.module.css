@@ -1,0 +1,15 @@
+.home_container {
+    @apply flex flex-col h-full justify-center;
+    height: Calc(100vh - 90px);
+    margin-top: -5rem;
+}
+
+.inputs_container {
+    height: 50px;
+}
+
+.home_panel {
+    @apply flex flex-col mt-20 w-2/3 mx-auto p-20 bg-main-dark shadow-lg shadow-main-dark h-3/4;
+    max-width: 800px;
+    height: fit-content;
+}

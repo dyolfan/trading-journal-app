@@ -1,0 +1,15 @@
+.label_text {
+    @apply text-xl text-white
+}
+
+.normal_text {
+    @apply text-white
+}
+
+.small_text {
+    @apply text-xs text-white
+}
+
+.title_text {
+    @apply text-white text-2xl text-center pb-10
+}

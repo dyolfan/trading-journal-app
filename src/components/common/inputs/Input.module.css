@@ -1,0 +1,13 @@
+.input_container {
+    @apply grid grid-cols-4 gap-10 pt-3
+}
+
+.input_label {
+  /*@apply block w-1/3*/
+    @apply block col-span-1
+}
+
+.input_field {
+   /*@apply block w-3/5*/
+    @apply block col-span-2 rounded
+}

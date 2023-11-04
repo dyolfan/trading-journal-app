@@ -1,0 +1,13 @@
+.logo_container {
+    @apply p-6 w-full shadow-lg flex items-center justify-center bg-main-dark;
+    font-family: 'Playfair Display', serif;
+    height: 90px;
+}
+
+.text {
+    @apply font-mono text-3xl  text-white;
+}
+
+.text_link {
+    @apply text-white underline
+}

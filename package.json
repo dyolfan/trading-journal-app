@@ -10,16 +10,23 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/electron-devtools-installer": "^2.2.2",
+    "@types/electron-devtools-installer": "^2.2.4",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "classnames": "^2.3.2",
     "electron-devtools-installer": "^3.2.0",
     "electron-reload": "^1.5.0",
+    "electron-router-dom": "^1.0.5",
+    "final-form": "^4.20.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-final-form": "^6.5.9",
+    "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
+    "tailwindcss": "^3.3.5",
     "typescript": "^4.9.5",
     "web-vitals": "^3.1.1"
   },
@@ -29,8 +36,11 @@
     "test": "react-scripts test",
     "postinstall": "electron-builder install-app-deps",
     "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://127.0.0.1:3000 && tsc -p electron -w\" \"wait-on http://127.0.0.1:3000 && tsc -p electron && electron .\"",
-    "electron:build": "yarn build && tsc -p electron && electron-builder",
-    "eject": "react-scripts eject"
+    "electron:build": "yarn build && tsc -p electron --trace-warnings && electron-builder",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "build": {
     "extends": null,
@@ -60,10 +70,18 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "electron": "^23.3.13",
     "electron-builder": "^23.6.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.3",
     "wait-on": "^7.0.1"
   }
 }
