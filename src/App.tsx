@@ -1,4 +1,5 @@
 import { Route, Router } from "electron-router-dom";
+import AccountStartingPage from "./components/AccountStartingPage";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import s from "./App.module.css";
@@ -11,6 +12,7 @@ function App() {
 					<>
 						<Route path='/' element={<Home />} />
 						<Route path='/register' element={<Register />} />
+						<Route path='/account-start' element={<AccountStartingPage />} />
 					</>
 				}
 			/>

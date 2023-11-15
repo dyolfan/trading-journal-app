@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import accountReducer, { CreateAccountState } from "./login/account";
+import accountReducer, { AccountState } from "./login/account";
 
 export type StoreState = {
-	account: CreateAccountState;
+	account: AccountState;
 };
 
 const store = configureStore({

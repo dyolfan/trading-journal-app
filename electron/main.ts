@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
-import * as path from "path";
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+import path = require("path");
 
 function createWindow() {
 	const win = new BrowserWindow({
@@ -10,6 +10,19 @@ function createWindow() {
 			// contextIsolation: false,
 			preload: path.join(__dirname, "preload.js"),
 		},
+	});
+
+	win.on("app-command", (e, cmd) => {
+		console.log(cmd);
+		// Navigate the window back when the user hits their mouse back button
+		if (cmd === "browser-backward" || cmd === "browser-forward") {
+			console.log("cmd " + cmd);
+			console.log("e " + e);
+		}
+	});
+
+	win.webContents.on("dom-ready", () => {
+		disableMouseNavigation(win);
 	});
 
 	win.removeMenu();
@@ -57,3 +70,15 @@ app.whenReady().then(() => {
 		}
 	});
 });
+
+function disableMouseNavigation(win: BrowserWindow): void {
+	const disableNavigationScript = `
+      document.addEventListener('mouseup', (event) => {
+        if (event.button === 3 || event.button === 4) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+    `;
+	win.webContents.executeJavaScript(disableNavigationScript);
+}

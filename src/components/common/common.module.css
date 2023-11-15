@@ -12,6 +12,10 @@
     @apply text-white underline
 }
 
+.text_link_disabled {
+    @apply text-main underline
+}
+
 .flex_row_container {
     @apply flex flex-row
 }

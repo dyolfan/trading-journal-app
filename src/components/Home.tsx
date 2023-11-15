@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getAccount } from "../features/login/account";
+import { AppDispatch, StoreState } from "../features/store";
 import sText from "../styles/texts.module.css";
 import Button from "./common/inputs/buttons/Button";
 import ButtonPanel from "./common/inputs/buttons/ButtonPanel";
@@ -9,10 +13,13 @@ import LogoBar from "./common/LogoBar";
 import s from "./Home.module.css";
 
 function Home() {
-	const [loading, setLoading] = useState(false);
+	const dispatch = useDispatch<AppDispatch>();
+	const accountState = useSelector((state: StoreState) => state.account);
+	const navigate = useNavigate();
 	const onSubmit: FormPropsOnSubmit<{ accountName: string }> = async (values) => {
-		setLoading(!loading);
-		console.log(values);
+		await dispatch(getAccount({ accountName: values.accountName })).then(() => {
+			navigate("/account-start");
+		});
 	};
 
 	return (
@@ -24,18 +31,23 @@ function Home() {
 						{({ form }: FormChildProps<{ accountName: string }>) => (
 							<>
 								<div className='inputs_container'>
-									{loading ? (
+									{accountState.loading ? (
 										<FormLoader />
 									) : (
 										<Input label='Account name' name='accountName' />
 									)}
 								</div>
 								<ButtonPanel>
-									<Button type='submit' text='Login' />
+									<Button
+										type='submit'
+										text='Login'
+										disabled={accountState.loading}
+									/>
 									<Button
 										type='reset'
 										text='Clear'
 										onClick={() => form.reset({})}
+										disabled={accountState.loading}
 									/>
 								</ButtonPanel>
 							</>
@@ -43,7 +55,11 @@ function Home() {
 					</Form>
 					<div className='flex-col mt-3.5'>
 						<div className={sText.normal_text}>Dont have an account?</div>
-						<TextLink text='Register!' path='/register' />
+						<TextLink
+							text='Register!'
+							path='/register'
+							isActive={!accountState.loading}
+						/>
 					</div>
 				</div>
 			</div>

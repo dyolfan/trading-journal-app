@@ -1,13 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { registerAccount } from "../../client/client";
+import { useNavigate } from "react-router-dom";
+import { fetchAccountByName, registerAccount } from "../../client/client";
 import { Account } from "../../types/model/api";
 
-export type CreateAccountState = {
+export type AccountState = {
 	loading: boolean;
 	created: boolean;
+	loaded: boolean;
 	error: boolean;
 	data: object;
 	result: object;
+	account?: Account;
 };
 
 export const accountSlice = createSlice({
@@ -16,43 +19,66 @@ export const accountSlice = createSlice({
 		loading: false,
 		created: false,
 		error: false,
-		data: {},
-		result: {},
-	} as CreateAccountState,
+		loaded: false,
+	} as AccountState,
 	reducers: {
-		creatingAccount: (state: CreateAccountState) => {
-			console.log("Sent create account");
+		creatingAccount: (state: AccountState) => {
 			state.loading = true;
 			state.created = false;
 		},
-		createdAccount: (state: CreateAccountState) => {
-			console.log("account created");
+		createdAccount: (state: AccountState) => {
 			state.loading = false;
 			state.created = true;
 		},
-		failCreateAccount: (state: CreateAccountState) => {
-			console.log("account creating failed");
+		failCreateAccount: (state: AccountState) => {
 			state.loading = false;
 			state.created = false;
 			state.error = true;
 		},
-		clearCreateAccount: (state: CreateAccountState) => {
+		clearCreateAccount: (state: AccountState) => {
 			state.loading = false;
 			state.created = false;
+		},
+		startGettingAccount: (state: AccountState) => {
+			state.loading = true;
+		},
+		storeAccount: (state: AccountState, action) => {
+			state.account = action.payload;
+			state.loading = false;
+			state.loaded = true;
+		},
+		storeAccountFailed: (state: AccountState) => {
+			state.loading = false;
+			state.error = true;
 		},
 	},
 });
 
 export const addAccount = createAsyncThunk("account/add", async (account: Account, api) => {
 	api.dispatch(accountSlice.actions.creatingAccount());
-	console.log({ account });
-	registerAccount(account).then(({ status }) => {
-		if (status === 200) {
+	registerAccount(account)
+		.then(() => {
 			api.dispatch(accountSlice.actions.createdAccount());
-		} else {
-			api.dispatch(accountSlice.actions.failCreateAccount());
-		}
-	});
+		})
+		.catch(() => api.dispatch(accountSlice.actions.failCreateAccount()));
 });
+
+export type GetAccountPayload = {
+	accountName: string;
+};
+export const getAccount = createAsyncThunk(
+	"account/get",
+	async (payload: GetAccountPayload, api) => {
+		api.dispatch(accountSlice.actions.startGettingAccount());
+		fetchAccountByName(payload)
+			.then(({ account }) => {
+				api.dispatch(accountSlice.actions.storeAccount(account));
+				const navigate = useNavigate();
+				navigate("/account-start");
+			})
+			.catch(() => api.dispatch(accountSlice.actions.storeAccountFailed()));
+		return {} as Account;
+	},
+);
 
 export default accountSlice.reducer;
