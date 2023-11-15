@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import LogoBar from "./common/LogoBar";
-import Input from "./common/inputs/Input";
-import Form, { FormChildProps, FormLoader, FormPropsOnSubmit } from "./common/inputs/Form";
+import sText from "../styles/texts.module.css";
 import Button from "./common/inputs/buttons/Button";
 import ButtonPanel from "./common/inputs/buttons/ButtonPanel";
-import s from "./Home.module.css";
-import sText from "../styles/texts.module.css";
+import Form, { FormChildProps, FormLoader, FormPropsOnSubmit } from "./common/inputs/Form";
+import Input from "./common/inputs/Input";
 import TextLink from "./common/links/TextLink";
+import LogoBar from "./common/LogoBar";
+import s from "./Home.module.css";
 
 function Home() {
 	const [loading, setLoading] = useState(false);
-	const onSubmit: FormPropsOnSubmit = (values) => {
+	const onSubmit: FormPropsOnSubmit<{ accountName: string }> = async (values) => {
 		setLoading(!loading);
 		console.log(values);
 	};
@@ -20,8 +20,8 @@ function Home() {
 			<LogoBar />
 			<div className={s.home_container}>
 				<div className={s.home_panel}>
-					<Form onSubmit={onSubmit}>
-						{({ form }: FormChildProps) => (
+					<Form<{ accountName: string }> onSubmit={onSubmit}>
+						{({ form }: FormChildProps<{ accountName: string }>) => (
 							<>
 								<div className='inputs_container'>
 									{loading ? (
@@ -32,16 +32,18 @@ function Home() {
 								</div>
 								<ButtonPanel>
 									<Button type='submit' text='Login' />
-									<Button text='Clear' onClick={() => form.reset({})} />
+									<Button
+										type='reset'
+										text='Clear'
+										onClick={() => form.reset({})}
+									/>
 								</ButtonPanel>
 							</>
 						)}
 					</Form>
 					<div className='flex-col mt-3.5'>
 						<div className={sText.normal_text}>Dont have an account?</div>
-						<div className='border-white border-2 w-fit p-2 rounded-xl mt-2'>
-							<TextLink text='Register!' path='/register' />
-						</div>
+						<TextLink text='Register!' path='/register' />
 					</div>
 				</div>
 			</div>

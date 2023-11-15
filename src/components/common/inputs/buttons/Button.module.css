@@ -24,7 +24,10 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     will-change: transform;
-    background-color: aliceblue;
 
-    @apply inline-block m-0
+    @apply inline-block m-0 bg-blueGray-50
+}
+
+.button_disabled {
+    @apply bg-main
 }

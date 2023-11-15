@@ -3,36 +3,37 @@ import React from "react";
 import { Form } from "react-final-form";
 import { PropagateLoader } from "react-spinners";
 
-export type FormPropsOnSubmit = (
-	values: object,
-	form: FormApi<object, Partial<object>>,
+export type FormPropsOnSubmit<T> = (
+	values: T,
+	form: FormApi<T, Partial<T>>,
 	callback?: (errors?: SubmissionErrors) => void,
 ) => SubmissionErrors | Promise<SubmissionErrors> | void;
 
-export interface FormProps {
-	children: React.FunctionComponent<FormChildProps>;
-	onSubmit: FormPropsOnSubmit;
-	validate?: (values: object) => ValidationErrors | Promise<ValidationErrors>;
+export interface FormProps<T> {
+	children: React.FunctionComponent<FormChildProps<T>>;
+	onSubmit: FormPropsOnSubmit<T>;
+	validate?: (values: T) => ValidationErrors | Promise<ValidationErrors>;
 }
 
-export type FormChildProps = {
-	form: FormApi<Record<string, object>>;
-};
+export interface FormChildProps<T> {
+	form: FormApi<T>;
+}
 
-function MyForm({ onSubmit, children }: FormProps) {
+export interface MyFormComp<T> extends React.FunctionComponent<FormProps<T>> {}
+
+const MyForm = <T,>({ onSubmit, children }: FormProps<T>) => {
 	return (
 		<Form
 			onSubmit={onSubmit}
-			// validate={validate}
+			destroyOnUnregister={true}
 			render={({ handleSubmit, form }) => (
 				<>
-					<form onSubmit={handleSubmit}>{children({ form } as FormChildProps)}</form>
+					<form onSubmit={handleSubmit}>{children({ form })}</form>
 				</>
 			)}
 		/>
 	);
-}
-
+};
 export const FormLoader: React.FunctionComponent = () => (
 	<div className='flex justify-center align-middle pt-5 h-10'>
 		<div>

@@ -5,9 +5,17 @@
 }
 
 .text {
-    @apply font-mono text-3xl  text-white;
+    @apply font-mono text-2xl  text-white;
 }
 
 .text_link {
     @apply text-white underline
+}
+
+.flex_row_container {
+    @apply flex flex-row
+}
+
+.flex_row_container_centered {
+    @apply flex flex-row justify-center items-center
 }

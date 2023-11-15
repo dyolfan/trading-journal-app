@@ -22,6 +22,7 @@ module.exports = {
 		sourceType: "module",
 	},
 	plugins: ["@typescript-eslint", "react-hooks", "prettier"],
+	ignorePatterns: ["src/types/model/**/*.ts"],
 	rules: {
 		indent: ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
