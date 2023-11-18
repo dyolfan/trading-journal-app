@@ -1,0 +1,19 @@
+.menu_bar_container {
+    height: 53px;
+    @apply mt-1 text-white bg-main-dark grid grid-cols-8 gap-0 w-full
+}
+
+.menu_bar_item {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_bar_item:hover {
+    @apply bg-main-darker border border-main-dark
+}
+
+.menu_bar_item_active {
+    @apply bg-main-darker border border-main-dark
+}

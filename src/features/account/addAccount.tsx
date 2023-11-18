@@ -7,6 +7,7 @@ export type AddAccountState = {
 	created: boolean;
 	error: boolean;
 };
+
 export const addAccountSlice = createSlice({
 	name: "addAccount",
 	initialState: {
