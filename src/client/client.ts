@@ -1,9 +1,6 @@
 import axios from "axios";
-import Account, { LoadAccountPayload } from "../features/account/loadAccount";
-
-type Account = {
-	name: string;
-};
+import { LoadAccountPayload } from "../features/account/loadAccount";
+import { Account } from "../types/model/api";
 
 const headers = {
 	"Content-Type": "application/json",

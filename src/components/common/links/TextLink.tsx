@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
 import s from "../common.module.css";
@@ -6,20 +7,27 @@ interface TextLinkProps {
 	text: string;
 	path: string;
 	isActive?: boolean;
+	className?: string;
+	onClick?: () => void;
 }
 
-const TextLink: React.FunctionComponent<TextLinkProps> = ({ path, text, isActive = true }) => {
-	let containerClassName = "border-2 w-fit p-2 rounded-xl mt-2";
+const TextLink: React.FunctionComponent<TextLinkProps> = ({
+	path,
+	text,
+	className,
+	isActive = true,
+	onClick,
+}) => {
+	let containerClassName = "border-main";
 	if (isActive) {
-		containerClassName += " border-white";
-	} else {
-		containerClassName += " border-main";
+		containerClassName += "border-white";
 	}
+	containerClassName = classNames(containerClassName, className, s.text_link_container);
 
 	return (
 		<div className={containerClassName}>
 			{isActive ? (
-				<Link to={path} className={s.text_link}>
+				<Link to={path} className={s.text_link} onClick={onClick}>
 					{text}
 				</Link>
 			) : (

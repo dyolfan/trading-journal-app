@@ -63,11 +63,13 @@ function Home() {
 					<div className='flex flex-row'>
 						<div className='flex-col mt-3.5'>
 							<div className={sText.normal_text}>Dont have an account?</div>
-							<TextLink
-								text='Register!'
-								path='/register'
-								isActive={!accountState.loading}
-							/>
+							<div className='mt-2'>
+								<TextLink
+									text='Register'
+									path='/register'
+									isActive={!accountState.loading}
+								/>
+							</div>
 						</div>
 						{accountState.error && (
 							<div className='ml-12 mt-5'>

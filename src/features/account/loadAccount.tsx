@@ -33,7 +33,12 @@ export const loadAccountSlice = createSlice({
 		clearLoadingAccount: (state: LoadAccountState) => {
 			state.loaded = false;
 			state.error = false;
+			state.loading = false;
+		},
+		clearAccount: (state: LoadAccountState) => {
 			state.loaded = false;
+			state.error = false;
+			state.loading = false;
 			state.account = undefined;
 		},
 	},

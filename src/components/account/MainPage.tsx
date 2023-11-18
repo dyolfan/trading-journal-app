@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { StoreState } from "../features/store";
-import LogoBar from "./common/LogoBar";
-import s from "./Home.module.css";
+import { StoreState } from "../../features/store";
+import LogoBar from "../common/LogoBar";
+import s from "../Home.module.css";
 
-function AccountStartingPage() {
+function MainPage() {
 	const accountState = useSelector((state: StoreState) => state.loadAccount);
 
 	return (
@@ -20,4 +20,4 @@ function AccountStartingPage() {
 	);
 }
 
-export default AccountStartingPage;
+export default MainPage;

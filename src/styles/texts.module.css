@@ -10,6 +10,16 @@
     @apply text-xs text-white
 }
 
+.big_text {
+    @apply text-3xl text-white
+}
+
+.text_big_central {
+    vertical-align: center;
+    font-size: 36px;
+    @apply text-white text-center
+}
+
 .title_text {
     @apply text-white text-2xl text-center pb-10
 }
