@@ -10,10 +10,6 @@
     align-items: center;
 }
 
-.menu_bar_item:hover {
-    @apply bg-main-darker border border-main-dark
-}
-
-.menu_bar_item_active {
+.menu_bar_item:hover, .menu_bar_item_active  {
     @apply bg-main-darker border border-main-dark
 }
