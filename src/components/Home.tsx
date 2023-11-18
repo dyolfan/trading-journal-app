@@ -70,10 +70,11 @@ function Home() {
 							/>
 						</div>
 						{accountState.error && (
-							<div className='ml-12 mt-10'>
+							<div className='ml-12 mt-5'>
 								<ActionMessage
 									text='Failed to login'
 									type={ActionMessageType.FAIL}
+									description='Please check account details'
 								/>
 							</div>
 						)}

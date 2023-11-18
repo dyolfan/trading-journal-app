@@ -1,0 +1,4 @@
+.message_with_details_container {
+    min-width: 320px;
+    @apply flex flex-col content-start border-white border p-2 rounded
+}
