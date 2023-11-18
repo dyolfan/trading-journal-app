@@ -1,5 +1,5 @@
 import axios from "axios";
-import Account, { GetAccountPayload } from "../features/login/account";
+import Account, { LoadAccountPayload } from "../features/account/loadAccount";
 
 type Account = {
 	name: string;
@@ -11,15 +11,15 @@ const headers = {
 };
 
 export const registerAccount = async (payload: Account) => {
-	const { data, status } = await axios
-		.post<Account>("/accounts/add", { ...payload }, { headers })
-		.catch((reason) => {
-			return { status: reason.response.status, data: {} };
-		});
+	const { data, status } = await axios.post<Account>(
+		"/accounts/add",
+		{ ...payload },
+		{ headers },
+	);
 	return { data, status };
 };
 
-export const fetchAccountByName = async (payload: GetAccountPayload) => {
+export const fetchAccountByName = async (payload: LoadAccountPayload) => {
 	const { data, status } = await axios.get<Account>("/accounts/name", {
 		params: { ...payload },
 		headers,

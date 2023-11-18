@@ -12,15 +12,6 @@ function createWindow() {
 		},
 	});
 
-	win.on("app-command", (e, cmd) => {
-		console.log(cmd);
-		// Navigate the window back when the user hits their mouse back button
-		if (cmd === "browser-backward" || cmd === "browser-forward") {
-			console.log("cmd " + cmd);
-			console.log("e " + e);
-		}
-	});
-
 	win.webContents.on("dom-ready", () => {
 		disableMouseNavigation(win);
 	});

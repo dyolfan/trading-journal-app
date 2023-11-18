@@ -5,7 +5,7 @@ import LogoBar from "./common/LogoBar";
 import s from "./Home.module.css";
 
 function AccountStartingPage() {
-	const accountState = useSelector((state: StoreState) => state.account);
+	const accountState = useSelector((state: StoreState) => state.loadAccount);
 
 	return (
 		<div>

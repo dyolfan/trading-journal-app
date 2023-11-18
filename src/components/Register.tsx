@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { accountSlice, addAccount } from "../features/login/account";
+import { addAccountSlice, addAccount } from "../features/account/addAccount";
 import { AppDispatch, StoreState } from "../features/store";
 import t from "../styles/texts.module.css";
 import { Account, AccountCurrency } from "../types/model/api";
@@ -20,19 +20,19 @@ type FormValues = {
 
 function Register() {
 	const dispatch = useDispatch<AppDispatch>();
-	const createAccountState = useSelector((state: StoreState) => state.account);
+	const addAccountState = useSelector((state: StoreState) => state.addAccount);
 
 	const onSubmit: FormPropsOnSubmit<FormValues> = async (values, form) => {
 		values.currency =
 			AccountCurrency[values.accountCurrency.value as keyof typeof AccountCurrency];
 		await dispatch(addAccount(values));
-		if (createAccountState.created) {
+		if (addAccountState.created) {
 			form.reset();
 		}
 	};
 
 	useEffect(() => {
-		dispatch(accountSlice.actions.clearCreateAccount());
+		dispatch(addAccountSlice.actions.clearCreateAccount());
 	}, []);
 
 	const options: DropdownSelectValue[] = [];
@@ -50,7 +50,7 @@ function Register() {
 						{() => (
 							<>
 								<div className='inputs_container'>
-									{createAccountState.loading ? (
+									{addAccountState.loading ? (
 										<FormLoader />
 									) : (
 										<>
@@ -67,19 +67,19 @@ function Register() {
 									<Button
 										type='submit'
 										text='Register'
-										disabled={createAccountState.loading}
+										disabled={addAccountState.loading}
 									/>
 								</ButtonPanel>
 							</>
 						)}
 					</Form>
-					{createAccountState.created && (
+					{addAccountState.created && (
 						<div className='flex flex-row justify-around'>
 							<ActionMessage text='Done!' type={ActionMessageType.SUCCESS} />
-							<TextLink text='Login!' path='/' />
+							<TextLink text='Login' path='/' />
 						</div>
 					)}
-					{createAccountState.error && (
+					{addAccountState.error && (
 						<ActionMessage
 							text='Failed to create account...'
 							type={ActionMessageType.FAIL}

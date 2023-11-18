@@ -12,7 +12,7 @@ function App() {
 					<>
 						<Route path='/' element={<Home />} />
 						<Route path='/register' element={<Register />} />
-						<Route path='/account-start' element={<AccountStartingPage />} />
+						<Route path='/account' element={<AccountStartingPage />} />
 					</>
 				}
 			/>

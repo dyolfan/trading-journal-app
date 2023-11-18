@@ -3,11 +3,11 @@ import s from "./common.module.css";
 
 function LogoBar() {
 	return (
-		<Link to={"/"}>
-			<div className={s.logo_container}>
+		<div className={s.logo_container}>
+			<Link to={"/"} className='col-start-3 col-span-1'>
 				<img src='/assets/image/TJ_Logo_w_nbg.png' alt='logo' className='h-20' />
-			</div>
-		</Link>
+			</Link>
+		</div>
 	);
 }
 

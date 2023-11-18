@@ -8,7 +8,7 @@ interface TextLinkProps {
 	isActive?: boolean;
 }
 
-const TextLink: React.FunctionComponent<TextLinkProps> = ({ path, text, isActive }) => {
+const TextLink: React.FunctionComponent<TextLinkProps> = ({ path, text, isActive = true }) => {
 	let containerClassName = "border-2 w-fit p-2 rounded-xl mt-2";
 	if (isActive) {
 		containerClassName += " border-white";

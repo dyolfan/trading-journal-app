@@ -1,18 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-import accountReducer, { AccountState } from "./login/account";
+import addAccountSlice, { AddAccountState } from "./account/addAccount";
+import loadAccountSlice, { LoadAccountState } from "./account/loadAccount";
 
 export type StoreState = {
-	account: AccountState;
+	addAccount: AddAccountState;
+	loadAccount: LoadAccountState;
 };
 
 const store = configureStore({
 	reducer: {
-		account: accountReducer,
+		addAccount: addAccountSlice,
+		loadAccount: loadAccountSlice,
 	},
 });
 
 export default store;
 
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
