@@ -13,6 +13,7 @@ function LogoBar() {
 
 	const isLoggedIn = accountState.account != undefined;
 	const accountName = accountState.account?.name;
+	const currency = accountState.account?.currency;
 
 	const onChangeAccountClick = () => {
 		dispatch(loadAccountSlice.actions.clearAccount());
@@ -21,9 +22,11 @@ function LogoBar() {
 	return (
 		<div className={s.logo_container}>
 			{isLoggedIn && (
-				<div className={"flex items-center pl-10 " + sText.text_big_central}>
-					{accountName}
-				</div>
+				<>
+					<div className={"flex items-center pl-10 " + sText.text_big_central}>
+						{`${accountName}: ${currency}`}
+					</div>
+				</>
 			)}
 			<Link
 				to={"/"}
