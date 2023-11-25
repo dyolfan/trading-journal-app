@@ -1,0 +1,33 @@
+.sidebar_container {
+    @apply bg-main-dark pt-3
+}
+
+.strategy_item_container {
+    height: 55px;
+    @apply flex flex-row items-center justify-center
+}
+
+.strategy_item_container:hover {
+    @apply bg-main-darker
+}
+
+.strategy_item_name {
+    @apply text-main-white w-5/6
+}
+
+.strategy_bar_container {
+    height: 40px;
+    @apply bg-main-dark text-main-white flex flex-row items-center
+}
+
+.button_add_strategy_container {
+    height: 30px;
+	padding: 0;
+	@apply ml-6
+}
+
+.button_add_strategy {
+    height: 30px;
+	font-size: 14px;
+	padding: 0;
+}

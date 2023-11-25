@@ -5,15 +5,15 @@
 }
 
 .text {
-    @apply font-mono text-2xl  text-white;
+    @apply font-mono text-2xl  text-main-white;
 }
 
 .text_xl {
-    @apply font-mono text-xl  text-white;
+    @apply font-mono text-xl  text-main-white;
 }
 
 .text_link {
-    @apply text-white
+    @apply text-main-white
 }
 
 .text_link_disabled {
@@ -25,6 +25,10 @@
     min-width: 150px;
     text-align: center;
     @apply border-2 w-fit p-2 rounded-xl
+}
+
+.text_link_container:hover {
+    @apply bg-main-darker
 }
 
 .flex_row_container {

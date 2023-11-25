@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../App";
 import { loadAccount, loadAccountSlice } from "../features/account/loadAccount";
 import { AppDispatch, StoreState } from "../features/store";
 import sText from "../styles/texts.module.css";
@@ -22,7 +23,7 @@ function Home() {
 
 	useEffect(() => {
 		if (accountState.loaded) {
-			navigate("/account");
+			navigate(ROUTES.STRATEGIES);
 		}
 		return () => {
 			dispatch(loadAccountSlice.actions.clearLoadingAccount());
@@ -66,7 +67,7 @@ function Home() {
 							<div className='mt-2'>
 								<TextLink
 									text='Register'
-									path='/register'
+									path={ROUTES.REGISTER}
 									isActive={!accountState.loading}
 								/>
 							</div>

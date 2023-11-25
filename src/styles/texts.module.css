@@ -1,25 +1,25 @@
 .label_text {
-    @apply text-xl text-white
+    @apply text-xl text-main-white
 }
 
 .normal_text {
-    @apply text-white
+    @apply text-main-white
 }
 
 .small_text {
-    @apply text-xs text-white
+    @apply text-xs text-main-white
 }
 
 .big_text {
-    @apply text-3xl text-white
+    @apply text-3xl text-main-white
 }
 
 .text_big_central {
     vertical-align: center;
     font-size: 36px;
-    @apply text-white text-center
+    @apply text-main-white text-center
 }
 
 .title_text {
-    @apply text-white text-2xl text-center pb-10
+    @apply text-main-white text-2xl text-center pb-10
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../App";
 import { loadAccountSlice } from "../../features/account/loadAccount";
 import { AppDispatch, StoreState } from "../../features/store";
 import sText from "../../styles/texts.module.css";
@@ -29,7 +30,7 @@ function LogoBar() {
 				</>
 			)}
 			<Link
-				to={"/"}
+				to={ROUTES.HOME}
 				className='col-start-3 col-span-1 w-full h-full'
 				style={{ minWidth: "400px" }}
 			>

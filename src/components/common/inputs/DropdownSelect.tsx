@@ -3,7 +3,7 @@ import React from "react";
 import { Field, FieldInputProps } from "react-final-form";
 import Select from "react-select";
 import sText from "../../../styles/texts.module.css";
-import s from "./Input.module.css";
+import s from "./Inputs.module.css";
 
 export type DropdownSelectValue = {
 	label: string;

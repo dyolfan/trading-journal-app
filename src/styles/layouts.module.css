@@ -1,0 +1,11 @@
+.page_with_sidebar__container {
+    @apply grid grid-cols-6
+}
+
+.page_with_sidebar__sidebar {
+    height: calc(100vh - 174px);
+}
+
+.page_with_sidebar__content {
+  @apply col-span-5
+}

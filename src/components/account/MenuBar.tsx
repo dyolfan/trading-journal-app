@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../App";
 import { mainNavBarSlice } from "../../features/account/bars/mainNavBar";
 import { StoreState } from "../../features/store";
 import s from "./MenuBar.module.css";
@@ -19,12 +21,14 @@ const MenuBar = () => {
 				index='1'
 				isActive={activeItem === "1"}
 				onClick={selectColumn}
+				route={ROUTES.STRATEGIES}
 			/>
 			<MenuItem
 				text='Trades'
 				index='2'
 				isActive={activeItem === "2"}
 				onClick={selectColumn}
+				route={ROUTES.TRADES}
 			/>
 			<span className='col-span-5' />
 			<MenuItem
@@ -32,6 +36,7 @@ const MenuBar = () => {
 				index='3'
 				onClick={selectColumn}
 				isActive={activeItem === "3"}
+				route={ROUTES.ACCOUNT_SETTINGS}
 			/>
 		</div>
 	);
@@ -42,17 +47,34 @@ type MenuItemProps = {
 	index: string;
 	onClick: (index: string) => void;
 	isActive?: boolean;
+	route?: string;
 };
 
-const MenuItem: React.FunctionComponent<MenuItemProps> = ({ text, index, isActive, onClick }) => {
-	let className = s.menu_bar_item;
+const MenuItem: React.FunctionComponent<MenuItemProps> = ({
+	text,
+	index,
+	isActive,
+	onClick,
+	route,
+}) => {
+	const navigate = useNavigate();
 
+	let className = s.menu_bar_item;
 	if (isActive) {
 		className = classNames(className, s.menu_bar_item_active);
 	}
 
+	const onItemClick = () => {
+		if (!isActive) {
+			onClick(index);
+			if (route) {
+				navigate(route);
+			}
+		}
+	};
+
 	return (
-		<div className={className} onClick={() => onClick(index)}>
+		<div className={className} onClick={() => onItemClick()}>
 			<div>{text}</div>
 		</div>
 	);

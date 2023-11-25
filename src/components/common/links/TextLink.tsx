@@ -8,6 +8,7 @@ interface TextLinkProps {
 	path: string;
 	isActive?: boolean;
 	className?: string;
+	contentClassName?: string;
 	onClick?: () => void;
 }
 
@@ -17,6 +18,7 @@ const TextLink: React.FunctionComponent<TextLinkProps> = ({
 	className,
 	isActive = true,
 	onClick,
+	contentClassName,
 }) => {
 	let containerClassName = "border-main";
 	if (isActive) {
@@ -27,7 +29,11 @@ const TextLink: React.FunctionComponent<TextLinkProps> = ({
 	return (
 		<div className={containerClassName}>
 			{isActive ? (
-				<Link to={path} className={s.text_link} onClick={onClick}>
+				<Link
+					to={path}
+					className={classNames(s.text_link, contentClassName)}
+					onClick={onClick}
+				>
 					{text}
 				</Link>
 			) : (

@@ -1,8 +1,19 @@
 import { Route, Router } from "electron-router-dom";
-import MainPage from "./components/account/MainPage";
-import Home from "./components/Home";
-import Register from "./components/Register";
 import s from "./App.module.css";
+import StrategiesPage from "./components/account/StrategiesPage";
+import Home from "./components/Home";
+import NotSupportedPage from "./components/NotSupportedPage";
+import Register from "./components/Register";
+
+export const ROUTES = {
+	HOME: "/",
+	REGISTER: "/register",
+	STRATEGIES: "/strategies",
+	ADD_STRATEGY: "/strategies/add",
+	TRADES: "/trades",
+	ACCOUNT_SETTINGS: "/account/settings",
+	NOT_FOUND: "/404",
+};
 
 function App() {
 	return (
@@ -10,9 +21,10 @@ function App() {
 			<Router
 				main={
 					<>
-						<Route path='/' element={<Home />} />
-						<Route path='/register' element={<Register />} />
-						<Route path='/account' element={<MainPage />} />
+						<Route path={ROUTES.HOME} element={<Home />} />
+						<Route path={ROUTES.REGISTER} element={<Register />} />
+						<Route path={ROUTES.STRATEGIES} element={<StrategiesPage />} />
+						<Route path='*' element={<NotSupportedPage />} />
 					</>
 				}
 			/>

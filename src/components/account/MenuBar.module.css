@@ -1,6 +1,6 @@
 .menu_bar_container {
-    height: 53px;
-    @apply mt-1 text-white bg-main-dark grid grid-cols-8 gap-0 w-full
+    height: 40px;
+    @apply mt-1 text-main-white bg-main-dark grid grid-cols-8 gap-0 w-full
 }
 
 .menu_bar_item {
