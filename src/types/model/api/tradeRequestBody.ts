@@ -4,18 +4,18 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { TradeRequestBodyDirection } from "./tradeRequestBodyDirection";
-import type { LotInfo } from "./lotInfo";
-import type { Outcome } from "./outcome";
-import type { Ticker } from "./ticker";
+import type { TradeRequestBodyDirection } from './tradeRequestBodyDirection';
+import type { LotInfo } from './lotInfo';
+import type { Outcome } from './outcome';
+import type { Ticker } from './ticker';
 
 export interface TradeRequestBody {
-	accountId: string;
-	date: string;
-	direction: TradeRequestBodyDirection;
-	id?: string;
-	lotInfo: LotInfo;
-	outcome?: Outcome;
-	strategy?: string;
-	ticker: Ticker;
+  accountId: string;
+  date: string;
+  direction: TradeRequestBodyDirection;
+  id?: string;
+  lotInfo: LotInfo;
+  outcome?: Outcome;
+  strategy?: string;
+  ticker: Ticker;
 }

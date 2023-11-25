@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Links } from "./links";
+import type { Links } from './links';
 
 export interface RepresentationModelObject {
-	_links?: Links;
+  _links?: Links;
 }

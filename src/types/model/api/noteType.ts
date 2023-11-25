@@ -5,11 +5,12 @@
  * OpenAPI spec version: v0
  */
 
-export type NoteType = (typeof NoteType)[keyof typeof NoteType];
+export type NoteType = typeof NoteType[keyof typeof NoteType];
+
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const NoteType = {
-	IDEA: "IDEA",
-	IMPROVEMENT: "IMPROVEMENT",
-	OBSERVATION: "OBSERVATION",
+  IDEA: 'IDEA',
+  IMPROVEMENT: 'IMPROVEMENT',
+  OBSERVATION: 'OBSERVATION',
 } as const;

@@ -6,5 +6,5 @@
  */
 
 export type ExecuteSearchStrategyGetParams = {
-	accountId?: string;
+accountId?: string;
 };

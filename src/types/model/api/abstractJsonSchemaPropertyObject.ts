@@ -6,6 +6,6 @@
  */
 
 export interface AbstractJsonSchemaPropertyObject {
-	readOnly?: boolean;
-	title?: string;
+  readOnly?: boolean;
+  title?: string;
 }

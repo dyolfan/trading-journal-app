@@ -6,9 +6,9 @@
  */
 
 export interface Strategy {
-	accountId: string;
-	description?: string;
-	id?: string;
-	name: string;
-	subtype?: string;
+  accountId: string;
+  description?: string;
+  id?: string;
+  name: string;
+  subtype?: string;
 }

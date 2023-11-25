@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { EntityModelAccount } from "./entityModelAccount";
+import type { EntityModelAccount } from './entityModelAccount';
 
 export type _PagedModelEntityModelAccountEmbedded = {
-	accounts?: EntityModelAccount[];
+  accounts?: EntityModelAccount[];
 };

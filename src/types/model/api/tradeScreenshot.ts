@@ -4,10 +4,10 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Binary } from "./binary";
+import type { Binary } from './binary';
 
 export interface TradeScreenshot {
-	id?: string;
-	image?: Binary;
-	tradeId?: string;
+  id?: string;
+  image?: Binary;
+  tradeId?: string;
 }

@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { _CollectionModelObjectEmbeddedObjectsItem } from "./_collectionModelObjectEmbeddedObjectsItem";
+import type { _CollectionModelObjectEmbeddedObjectsItem } from './_collectionModelObjectEmbeddedObjectsItem';
 
 export type _CollectionModelObjectEmbedded = {
-	objects?: _CollectionModelObjectEmbeddedObjectsItem[];
+  objects?: _CollectionModelObjectEmbeddedObjectsItem[];
 };

@@ -5,12 +5,13 @@
  * OpenAPI spec version: v0
  */
 
-export type OutcomeStatus = (typeof OutcomeStatus)[keyof typeof OutcomeStatus];
+export type OutcomeStatus = typeof OutcomeStatus[keyof typeof OutcomeStatus];
+
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const OutcomeStatus = {
-	CLOSED: "CLOSED",
-	PARTLY_CLOSED: "PARTLY_CLOSED",
-	BREAK_EVEN: "BREAK_EVEN",
-	OPEN: "OPEN",
+  CLOSED: 'CLOSED',
+  PARTLY_CLOSED: 'PARTLY_CLOSED',
+  BREAK_EVEN: 'BREAK_EVEN',
+  OPEN: 'OPEN',
 } as const;

@@ -4,11 +4,11 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Links } from "./links";
-import type { EntityModelAccountCurrency } from "./entityModelAccountCurrency";
+import type { Links } from './links';
+import type { EntityModelAccountCurrency } from './entityModelAccountCurrency';
 
 export interface EntityModelAccount {
-	_links?: Links;
-	currency: EntityModelAccountCurrency;
-	name: string;
+  _links?: Links;
+  currency: EntityModelAccountCurrency;
+  name: string;
 }

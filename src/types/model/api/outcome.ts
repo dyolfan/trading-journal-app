@@ -4,14 +4,14 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Note } from "./note";
-import type { TradeScreenshot } from "./tradeScreenshot";
-import type { OutcomeStatus } from "./outcomeStatus";
+import type { Note } from './note';
+import type { TradeScreenshot } from './tradeScreenshot';
+import type { OutcomeStatus } from './outcomeStatus';
 
 export interface Outcome {
-	isProfit: boolean;
-	notes?: Note[];
-	pnl: number;
-	screenshot?: TradeScreenshot;
-	status: OutcomeStatus;
+  isProfit: boolean;
+  notes?: Note[];
+  pnl: number;
+  screenshot?: TradeScreenshot;
+  status: OutcomeStatus;
 }

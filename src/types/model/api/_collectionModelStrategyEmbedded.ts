@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { StrategyResponse } from "./strategyResponse";
+import type { StrategyResponse } from './strategyResponse';
 
 export type _CollectionModelStrategyEmbedded = {
-	strategies?: StrategyResponse[];
+  strategies?: StrategyResponse[];
 };

@@ -4,7 +4,7 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Trade } from "./trade";
-import type { EntityModelTrade } from "./entityModelTrade";
+import type { Trade } from './trade';
+import type { EntityModelTrade } from './entityModelTrade';
 
 export type GetItemResourceTradeGet1200 = Trade | EntityModelTrade;

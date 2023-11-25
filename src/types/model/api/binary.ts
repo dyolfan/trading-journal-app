@@ -6,6 +6,6 @@
  */
 
 export interface Binary {
-	data?: string[];
-	type?: string;
+  data?: string[];
+  type?: string;
 }

@@ -4,10 +4,10 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { _CollectionModelEntityModelStrategyEmbedded } from "./_collectionModelEntityModelStrategyEmbedded";
-import type { Links } from "./links";
+import type { _CollectionModelEntityModelStrategyEmbedded } from './_collectionModelEntityModelStrategyEmbedded';
+import type { Links } from './links';
 
 export interface CollectionModelEntityModelStrategy {
-	_embedded?: _CollectionModelEntityModelStrategyEmbedded;
-	_links?: Links;
+  _embedded?: _CollectionModelEntityModelStrategyEmbedded;
+  _links?: Links;
 }

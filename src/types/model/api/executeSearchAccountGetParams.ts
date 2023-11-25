@@ -5,7 +5,6 @@
  * OpenAPI spec version: v0
  */
 
-export interface LotInfo {
-  risk: number;
-  riskRewardRatio: number;
-}
+export type ExecuteSearchAccountGetParams = {
+name?: string;
+};

@@ -6,8 +6,8 @@
  */
 
 export interface PageMetadata {
-	number?: number;
-	size?: number;
-	totalElements?: number;
-	totalPages?: number;
+  number?: number;
+  size?: number;
+  totalElements?: number;
+  totalPages?: number;
 }

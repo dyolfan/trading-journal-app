@@ -4,12 +4,12 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { _PagedModelEntityModelAccountEmbedded } from "./_pagedModelEntityModelAccountEmbedded";
-import type { Links } from "./links";
-import type { PageMetadata } from "./pageMetadata";
+import type { _PagedModelEntityModelAccountEmbedded } from './_pagedModelEntityModelAccountEmbedded';
+import type { Links } from './links';
+import type { PageMetadata } from './pageMetadata';
 
 export interface PagedModelEntityModelAccount {
-	_embedded?: _PagedModelEntityModelAccountEmbedded;
-	_links?: Links;
-	page?: PageMetadata;
+  _embedded?: _PagedModelEntityModelAccountEmbedded;
+  _links?: Links;
+  page?: PageMetadata;
 }

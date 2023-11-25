@@ -6,16 +6,16 @@
  */
 
 export type GetCollectionResourceTradeGet1Params = {
-	/**
-	 * Zero-based page index (0..N)
-	 */
-	page?: number;
-	/**
-	 * The size of the page to be returned
-	 */
-	size?: number;
-	/**
-	 * Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
-	 */
-	sort?: string[];
+/**
+ * Zero-based page index (0..N)
+ */
+page?: number;
+/**
+ * The size of the page to be returned
+ */
+size?: number;
+/**
+ * Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+ */
+sort?: string[];
 };

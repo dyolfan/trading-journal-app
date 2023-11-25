@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { EntityModelTradeScreenshot } from "./entityModelTradeScreenshot";
+import type { EntityModelTradeScreenshot } from './entityModelTradeScreenshot';
 
 export type _PagedModelEntityModelTradeScreenshotEmbedded = {
-	tradeScreenshots?: EntityModelTradeScreenshot[];
+  tradeScreenshots?: EntityModelTradeScreenshot[];
 };

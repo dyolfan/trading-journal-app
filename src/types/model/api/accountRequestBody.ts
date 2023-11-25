@@ -4,12 +4,12 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AccountRequestBodyCurrency } from "./accountRequestBodyCurrency";
+import type { AccountRequestBodyCurrency } from './accountRequestBodyCurrency';
 
 export interface AccountRequestBody {
-	currency: AccountRequestBodyCurrency;
-	id?: string;
-	name: string;
-	strategies?: string[];
-	trades?: string[];
+  currency: AccountRequestBodyCurrency;
+  id?: string;
+  name: string;
+  strategies: string[];
+  trades: string[];
 }

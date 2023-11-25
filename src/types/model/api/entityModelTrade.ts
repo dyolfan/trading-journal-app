@@ -4,18 +4,18 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Links } from "./links";
-import type { EntityModelTradeDirection } from "./entityModelTradeDirection";
-import type { LotInfo } from "./lotInfo";
-import type { Outcome } from "./outcome";
-import type { Ticker } from "./ticker";
+import type { Links } from './links';
+import type { EntityModelTradeDirection } from './entityModelTradeDirection';
+import type { LotInfo } from './lotInfo';
+import type { Outcome } from './outcome';
+import type { Ticker } from './ticker';
 
 export interface EntityModelTrade {
-	_links?: Links;
-	accountId: string;
-	date: string;
-	direction: EntityModelTradeDirection;
-	lotInfo: LotInfo;
-	outcome?: Outcome;
-	ticker: Ticker;
+  _links?: Links;
+  accountId: string;
+  date: string;
+  direction: EntityModelTradeDirection;
+  lotInfo: LotInfo;
+  outcome?: Outcome;
+  ticker: Ticker;
 }

@@ -4,7 +4,7 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Account } from "./account";
-import type { EntityModelAccount } from "./entityModelAccount";
+import type { Account } from './account';
+import type { EntityModelAccount } from './entityModelAccount';
 
 export type GetItemResourceAccountGet1200 = Account | EntityModelAccount;

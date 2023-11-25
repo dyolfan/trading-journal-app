@@ -5,11 +5,11 @@
  * OpenAPI spec version: v0
  */
 
-export type EntityModelTradeDirection =
-	(typeof EntityModelTradeDirection)[keyof typeof EntityModelTradeDirection];
+export type EntityModelTradeDirection = typeof EntityModelTradeDirection[keyof typeof EntityModelTradeDirection];
+
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const EntityModelTradeDirection = {
-	LONG: "LONG",
-	SHORT: "SHORT",
+  LONG: 'LONG',
+  SHORT: 'SHORT',
 } as const;

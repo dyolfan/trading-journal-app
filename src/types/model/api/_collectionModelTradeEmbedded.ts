@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { TradeResponse } from "./tradeResponse";
+import type { TradeResponse } from './tradeResponse';
 
 export type _CollectionModelTradeEmbedded = {
-	trades?: TradeResponse[];
+  trades?: TradeResponse[];
 };

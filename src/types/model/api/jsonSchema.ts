@@ -4,15 +4,15 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { JsonSchemaDefinitions } from "./jsonSchemaDefinitions";
-import type { JsonSchemaProperties } from "./jsonSchemaProperties";
+import type { JsonSchemaDefinitions } from './jsonSchemaDefinitions';
+import type { JsonSchemaProperties } from './jsonSchemaProperties';
 
 export interface JsonSchema {
-	$schema?: string;
-	definitions?: JsonSchemaDefinitions;
-	description?: string;
-	properties?: JsonSchemaProperties;
-	requiredProperties?: string[];
-	title?: string;
-	type?: string;
+  $schema?: string;
+  definitions?: JsonSchemaDefinitions;
+  description?: string;
+  properties?: JsonSchemaProperties;
+  requiredProperties?: string[];
+  title?: string;
+  type?: string;
 }

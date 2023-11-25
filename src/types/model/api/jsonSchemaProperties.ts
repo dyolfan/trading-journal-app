@@ -4,6 +4,6 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AbstractJsonSchemaPropertyObject } from "./abstractJsonSchemaPropertyObject";
+import type { AbstractJsonSchemaPropertyObject } from './abstractJsonSchemaPropertyObject';
 
-export type JsonSchemaProperties = { [key: string]: AbstractJsonSchemaPropertyObject };
+export type JsonSchemaProperties = {[key: string]: AbstractJsonSchemaPropertyObject};

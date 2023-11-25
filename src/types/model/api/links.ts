@@ -4,8 +4,6 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Link } from "./link";
+import type { Link } from './link';
 
-export interface Links {
-	[key: string]: Link;
-}
+export interface Links {[key: string]: Link}

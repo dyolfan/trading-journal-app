@@ -4,6 +4,6 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { Item } from "./item";
+import type { Item } from './item';
 
-export type JsonSchemaDefinitions = { [key: string]: Item };
+export type JsonSchemaDefinitions = {[key: string]: Item};

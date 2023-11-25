@@ -5,10 +5,11 @@
  * OpenAPI spec version: v0
  */
 
-export type TradeDirection = (typeof TradeDirection)[keyof typeof TradeDirection];
+export type TradeDirection = typeof TradeDirection[keyof typeof TradeDirection];
+
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const TradeDirection = {
-	LONG: "LONG",
-	SHORT: "SHORT",
+  LONG: 'LONG',
+  SHORT: 'SHORT',
 } as const;

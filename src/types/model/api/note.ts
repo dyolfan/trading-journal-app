@@ -4,9 +4,9 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { NoteType } from "./noteType";
+import type { NoteType } from './noteType';
 
 export interface Note {
-	text?: string;
-	type: NoteType;
+  text?: string;
+  type: NoteType;
 }

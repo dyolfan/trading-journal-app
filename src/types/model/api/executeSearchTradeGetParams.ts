@@ -6,5 +6,5 @@
  */
 
 export type ExecuteSearchTradeGetParams = {
-	accountId?: string;
+accountId?: string;
 };

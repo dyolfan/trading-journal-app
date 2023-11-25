@@ -4,14 +4,14 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { AccountCurrency } from "./accountCurrency";
-import type { Strategy } from "./strategy";
-import type { Trade } from "./trade";
+import type { AccountCurrency } from './accountCurrency';
+import type { Strategy } from './strategy';
+import type { Trade } from './trade';
 
 export interface Account {
-	currency: AccountCurrency;
-	id?: string;
-	name: string;
-	strategies?: Strategy[];
-	trades?: Trade[];
+  currency: AccountCurrency;
+  id?: string;
+  name: string;
+  strategies: Strategy[];
+  trades: Trade[];
 }

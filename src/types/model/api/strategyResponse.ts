@@ -6,8 +6,8 @@
  */
 
 export interface StrategyResponse {
-	accountId: string;
-	description?: string;
-	name: string;
-	subtype?: string;
+  accountId: string;
+  description?: string;
+  name: string;
+  subtype?: string;
 }

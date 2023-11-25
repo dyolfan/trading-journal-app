@@ -4,8 +4,8 @@
  * OpenAPI definition
  * OpenAPI spec version: v0
  */
-import type { EntityModelStrategy } from "./entityModelStrategy";
+import type { EntityModelStrategy } from './entityModelStrategy';
 
 export type _CollectionModelEntityModelStrategyEmbedded = {
-	strategies?: EntityModelStrategy[];
+  strategies?: EntityModelStrategy[];
 };
